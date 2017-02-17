@@ -1,21 +1,8 @@
-# Express socket.io starter
+# Johnny-Four Bot Control Server
 
-A simple starter for creating an express app that uses socket.io
+This server is used to create a web socket connection for the Johnny-Four Bot motor control. 
+The bot uses a [separate server](https://github.com/Johnny-Four/johnny-ssr) to create another socket connection for video streaming. 
 
-This project comes with a basic .eslintrc for writing ES2015 style code.
+## How It Works
 
-Install [linter-eslint for atom here](https://atom.io/packages/linter-eslint).
-
-# Getting Started
-
-```sh
-git clone https://github.com/gSchool/express-socket.io-starter.git
-cd express-socket.io-starter
-npm install
-npm run dev # starts nodemon and eslint-watch
-```
-
-# Setup
-
-* Add your socket code to `sockets/index.js`
-  * The initialize function is called with an instance of `io` after the application has started.
+A basice Node.js [Express](https://www.npmjs.com/package/express) server is created with a [socket.io](https://www.npmjs.com/package/socket.io) connection to keep open a constant stream of data/commands between user and bot. Arrow keys pressed by the user send commands through the socket to the robot to control movement.  
